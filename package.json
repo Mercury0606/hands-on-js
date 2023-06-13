@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/Mercury0606/notes-app#readme",
   "dependencies": {
-    "validator": "^13.9.0"
+    "chalk": "^2.4.1",
+    "validator": "^13.9.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
