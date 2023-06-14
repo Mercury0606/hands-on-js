@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Mercury0606/notes-app#readme",
   "dependencies": {
+    "cassandra-driver": "^4.6.4",
     "chalk": "^2.4.1",
     "validator": "^13.9.0",
     "yargs": "^17.7.2"

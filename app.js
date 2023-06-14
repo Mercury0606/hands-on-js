@@ -13,12 +13,21 @@ yargs.command({
             describe:'Note title',
             demandOption:true,
             type:'string'
+        },
+        body:{
+            describe:'Note title',
+            demandOption:true,
+            type:'string'
         }
     },
-    handler:function(argv){
-        console.log('Title: ',argv.title);
+    handler:function(argv)
+    {
+        console.log('Title:', argv.title);
+        console.log('Body:', argv.body);
     }
 })
+
+
 yargs.command({
     command:'remove',
     describe:'Remove a new note',
