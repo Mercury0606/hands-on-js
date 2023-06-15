@@ -1,8 +1,8 @@
 const yargs = require('yargs');
+const notes = require('./notes');
 
 
 //Customize yargs version
-
 yargs.version('1.1.0')
 
 yargs.command({
@@ -22,8 +22,7 @@ yargs.command({
     },
     handler:function(argv)
     {
-        console.log('Title:', argv.title);
-        console.log('Body:', argv.body);
+        notes.addNote(argv.title,argv.body)
     }
 })
 
@@ -31,8 +30,16 @@ yargs.command({
 yargs.command({
     command:'remove',
     describe:'Remove a new note',
-    handler:function(){
-        console.log('Removing a new note!')
+    builder:{
+        title:{
+            describe:'Note title',
+            demandOption:true,
+            type:'string'
+        },
+    },
+    handler:function(argv){
+        notes.removeNote(argv.title)
+
     }
 })
 
@@ -58,4 +65,6 @@ yargs.command({
     }
 })
 
- yargs.parse()
+
+
+yargs.parse()

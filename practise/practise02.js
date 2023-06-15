@@ -1,5 +1,5 @@
 const validator=require('validator')
-const getYourNotes=require('./notes')
+const getYourNotes=require('../notes')
 const notes = getYourNotes()
 const  chalk= require('chalk')
 const log = console.log;
