@@ -27,12 +27,13 @@ const removeNote =function (title){
      const notesToKeep=notes.filter(function (note) {
           return note.title !==title
      })
-     if (notesToKeep.length===notes.length){
-          console.log(chalk.bgRed("Note doesn't exist                              "))
-     }
-     else {
+     if (notesToKeep.length<notes.length){
           saveNotes(notesToKeep)
           console.log(chalk.bgGreen('Removing a new note!                               '))
+     }
+     else {
+          console.log(chalk.bgRed("Note doesn't exist                              "))
+
      }
 }
 
