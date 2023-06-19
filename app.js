@@ -1,5 +1,6 @@
 const yargs = require('yargs');
 const notes = require('./notes');
+const {listNotes, readNotes} = require("./notes");
 
 
 //Customize yargs version
@@ -20,10 +21,11 @@ yargs.command({
             type:'string'
         }
     },
-    handler:function(argv)
+    handler(argv)
     {
         notes.addNote(argv.title,argv.body)
     }
+
 })
 
 
@@ -37,7 +39,7 @@ yargs.command({
             type:'string'
         },
     },
-    handler:function(argv){
+    handler(argv){
         notes.removeNote(argv.title)
 
     }
@@ -48,20 +50,27 @@ yargs.command({
     describe:'list a new note',
     builder:{
         title:{
-          describe:'Note title'
-
+          describe:'Note title',
+          type:'string'
         }
     },
-    handler:function(){
-        console.log('PlaceholderForList');
+    handler(){
+        listNotes()
     }
 })
 
 yargs.command({
     command:'read',
     describe:'read new note',
-    handler:function(argv){
-        console.log('PlaceholderForRead',argv)
+    builder:{
+        title:{
+            describe:'Note title',
+            demandOption:true,
+            type:'string'
+        }
+    },
+    handler(argv){
+        readNotes(argv.title)
     }
 })
 
