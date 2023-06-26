@@ -8,4 +8,4 @@ request({url:url,json:true},(error,response)=>{
     console.log(current.weather_descriptions[0]+" It is currently " + current.temperature + " degree out. there is a "+current.precip+"% chance of rain");
 })
 //Geocoding
-https://api.mapbox.com/geocoding/v5/mapbox.places/San%20Francisco.json?access_token=pk.eyJ1IjoibWVyYzRydnJ0IiwiYSI6ImNsamNmZmJyNTEyNzEzY3BlaWZ2aXJlcDkifQ.sFZgsIPBSnfxq0TPzC6GwQ
+weatherURL='https://api.mapbox.com/geocoding/v5/mapbox.places/San%20Francisco.json?access_token=pk.eyJ1IjoibWVyYzRydnJ0IiwiYSI6ImNsamNmZmJyNTEyNzEzY3BlaWZ2aXJlcDkifQ.sFZgsIPBSnfxq0TPzC6GwQ'
